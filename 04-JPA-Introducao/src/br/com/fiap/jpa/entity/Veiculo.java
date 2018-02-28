@@ -50,6 +50,85 @@ public class Veiculo {
 	@Column(name="ds_combustivel")
 	private Combustivel combustivel;
 	
+	public Veiculo() {
+		super();
+	}
+
+	public Veiculo(String modelo, int ano, String cor, int chaveAcesso, Calendar dataFabricacao, byte[] foto,
+			Combustivel combustivel) {
+		super();
+		this.modelo = modelo;
+		this.ano = ano;
+		this.cor = cor;
+		this.chaveAcesso = chaveAcesso;
+		this.dataFabricacao = dataFabricacao;
+		this.foto = foto;
+		this.combustivel = combustivel;
+	}
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	public int getAno() {
+		return ano;
+	}
+
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+
+	public String getCor() {
+		return cor;
+	}
+
+	public void setCor(String cor) {
+		this.cor = cor;
+	}
+
+	public int getChaveAcesso() {
+		return chaveAcesso;
+	}
+
+	public void setChaveAcesso(int chaveAcesso) {
+		this.chaveAcesso = chaveAcesso;
+	}
+
+	public Calendar getDataFabricacao() {
+		return dataFabricacao;
+	}
+
+	public void setDataFabricacao(Calendar dataFabricacao) {
+		this.dataFabricacao = dataFabricacao;
+	}
+
+	public byte[] getFoto() {
+		return foto;
+	}
+
+	public void setFoto(byte[] foto) {
+		this.foto = foto;
+	}
+
+	public Combustivel getCombustivel() {
+		return combustivel;
+	}
+
+	public void setCombustivel(Combustivel combustivel) {
+		this.combustivel = combustivel;
+	}
 	
 }
 
