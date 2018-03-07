@@ -24,8 +24,9 @@ public class FuncionarioDAOImpl implements FuncionarioDAO {
 	@Override
 	public void apagar(int codigo) throws FuncionarioInexisteException {
 		Funcionario f = buscar(codigo);
-		if (f == null)
+		if (f == null){
 			throw new FuncionarioInexisteException();
+		}
 		em.remove(f);
 	}
 
