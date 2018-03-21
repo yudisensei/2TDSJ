@@ -1,5 +1,6 @@
 package br.com.fiap.jpa.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,6 +26,22 @@ public class ItemPedido {
 	
 	@Column(name="qt_item_pedido")
 	private int quantidade;
+	
+	public ItemPedido() {
+		super();
+	}
+
+	public ItemPedido(double valor, int quantidade, Produto produto, Pedido pedido) {
+		super();
+		this.valor = valor;
+		this.quantidade = quantidade;
+		this.produto = produto;
+		this.pedido = pedido;
+	}
+
+	@ManyToOne(cascade=CascadeType.PERSIST)
+	@JoinColumn(name="cd_produto")
+	private Produto produto;
 	
 	@ManyToOne
 	@JoinColumn(name="cd_pedido",nullable=false)
@@ -60,6 +77,14 @@ public class ItemPedido {
 
 	public void setPedido(Pedido pedido) {
 		this.pedido = pedido;
+	}
+
+	public Produto getProduto() {
+		return produto;
+	}
+
+	public void setProduto(Produto produto) {
+		this.produto = produto;
 	}
 	
 }
